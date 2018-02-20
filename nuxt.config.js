@@ -6,6 +6,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs : {
+      lang: 'es'
+    },
     title: 'apu314.com',
     meta: [
       { charset: 'utf-8' },
