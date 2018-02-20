@@ -28,3 +28,21 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      title: 'apu314'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: 'Home page - apu314.com' }
+      ]
+    }
+  }
+}
+</script>
