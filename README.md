@@ -1,6 +1,6 @@
 # apu314.com
 
-> Full-Stack Web Development
+> Portfolio site
 
 ## Build Setup
 
