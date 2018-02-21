@@ -30,5 +30,12 @@
 </script>
 
 <style scoped>
-
+  .home-locale-link {
+    color: #20c0b1;
+    cursor: pointer;
+  }
+  .home-locale-link--active {
+    color: white;
+   cursor: default;
+  }
 </style>

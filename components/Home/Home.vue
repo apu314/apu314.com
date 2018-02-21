@@ -15,15 +15,11 @@
 </template>
 
 <script>
-  // import HomeNavigation from "./HomeNavigation.vue";
-  // import HomeText from "./HomeText.vue";
-  // import HomeLocaleSwitch from "./HomeLocaleSwitch.vue";
+  // import LocaleSwitch from "./LocaleSwitch.vue";
 
   export default {
     components: {
-      // HomeNavigation,
-      // HomeText,
-      // HomeLocaleSwitch
+      // LocaleSwitch
     }
   }
 </script>
