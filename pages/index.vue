@@ -8,17 +8,17 @@
   export default {
     data () {
       return {
-        title: 'apu314'
+        title: this.$t('index.title')
       }
     },
     head () {
       return {
-        title: this.$t('home.title'),
+        title: this.$t('index.title'),
         meta: [
           { name: 'theme-color', content: '#20c0b1' },
-          { hid: 'description', name: 'description', content: 'Home page - apu314.com' },
-          { property: 'og:title', content: this.$t('home.title') },
-          { property: 'og:description', content: this.$t('home.subtitle') },
+          { property: 'og:title', content: this.$t('index.title') },
+          { property: 'og:description', content: this.$t('index.subtitle') },
+          { hid: 'description', name: 'description', content: this.$t('index.subtitle') },
           { property: 'og:url', content: 'https://apu314.com/' }
         ]
       }

@@ -41,7 +41,17 @@
     <v-toolbar fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title v-text="title" class="text-xs-right  ml-0"></v-toolbar-title>
+      <v-menu :nudge-width="100" offset-y>
+        <v-toolbar-title slot="activator">
+          <span>{{ selectedLang }}</span>
+          <v-icon light>arrow_drop_down</v-icon>
+        </v-toolbar-title>
+        <v-list>
+          <v-list-tile v-for="lang in languages" :key="lang.shortTitle" @click="selectLang(lang.shortTitle)">
+            <v-list-tile-title v-text="lang.title"></v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
     </v-toolbar>
     <v-content>
       <v-container>
@@ -75,14 +85,29 @@
         drawer: false, // Nav Drawer default: closed.
         fixed: false,
         items: [
-          { icon: 'home', title: 'Blog', to: '/' },
-          { icon: 'work', title: 'Portfolio', to: '/projects' },
-          { icon: 'content_paste', title: 'CV', to: '/cv' },
-          { icon: 'build', title: 'Services', to: '/services' },
-          { icon: 'person', title: 'Contact Me', to: '/contact' }
+          { icon: 'home', title: this.$t('navigation.blog'), to: '/' },
+          { icon: 'work', title: this.$t('navigation.portfolio'), to: '/projects' },
+          { icon: 'content_paste', title: this.$t('navigation.cv'), to: '/cv' },
+          { icon: 'build', title: this.$t('navigation.services'), to: '/services' },
+          { icon: 'person', title: this.$t('navigation.contact'), to: '/contact' }
         ],
         miniVariant: false,
+        languages: [
+          { title: 'Español', shortTitle: 'Es' },
+          { title: 'English', shortTitle: 'En' }
+        ],
+        selectedLang: 'Es',
         title: 'apu314'
+      }
+    },
+    methods: {
+      selectLang (lang) {
+        if (lang === this.$i18n.locale) {
+          return
+        }
+        this.selectedLang = lang
+        this.$i18n.locale = lang
+        localStorage.setItem('locale', lang)
       }
     }
   }

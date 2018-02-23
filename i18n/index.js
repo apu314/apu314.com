@@ -1,38 +1,34 @@
-/*
-import Navigation from "./shared/navigation.js";
-import Footer from "./shared/footer.js";
+import Navigation from './shared/navigation.js'
+import Footer from './shared/footer.js'
 
-import Home from "./pages/home.js";
-import ErrorPage from "./pages/error.js";
+import ErrorPage from './pages/error.js'
 
-import Blog from "./pages/blog.js";
-import Experiments from "./pages/experiments.js";
-import Projects from "./pages/projects.js";
-import About from "./pages/about.js";
+import Index from './pages/index.js'
+import Portfolio from './pages/portfolio.js'
+import Services from './pages/services.js'
+import Contact from './pages/contact.js'
 
 export default {
-    en: {
-        ...Navigation.en,
-        ...Footer.en,
-        ...ErrorPage.en,
+  en: {
+    ...Navigation.en,
+    ...Footer.en,
 
-        ...About.en,
-        ...Blog.en,
-        ...Experiments.en,
-        ...Projects.en,
-        ...Home.en
-    },
+    ...ErrorPage.en,
 
-    es: {
-        ...Navigation.es,
-        ...Footer.es,
-        ...ErrorPage.es,
+    ...Index.en,
+    ...Portfolio.en,
+    ...Services.en,
+    ...Contact.en
+  },
+  es: {
+    ...Navigation.es,
+    ...Footer.es,
 
-        ...About.es,
-        ...Blog.es,
-        ...Experiments.es,
-        ...Projects.es,
-        ...Home.es
-    }
-};
-*/
+    ...ErrorPage.es,
+
+    ...Index.es,
+    ...Portfolio.es,
+    ...Services.en,
+    ...Contact.es
+  }
+}
