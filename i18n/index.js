@@ -28,7 +28,7 @@ export default {
 
     ...Index.es,
     ...Portfolio.es,
-    ...Services.en,
+    ...Services.es,
     ...Contact.es
   }
 }

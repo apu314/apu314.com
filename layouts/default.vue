@@ -33,7 +33,7 @@
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            <v-list-tile-title v-text="$t('navigation.' + item.title)"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -67,7 +67,7 @@
             :key="i"
             :to="item.to"
         >
-          {{ item.title }}
+          {{ $t('navigation.' + item.title) }}
         </v-btn>
         <v-flex xs12 py-3 text-xs-center white--text>
           &copy; {{ new Date().getFullYear() }} — <strong>apu314.com</strong>
@@ -85,20 +85,23 @@
         drawer: false, // Nav Drawer default: closed.
         fixed: false,
         items: [
-          { icon: 'home', title: this.$t('navigation.blog'), to: '/' },
-          { icon: 'work', title: this.$t('navigation.portfolio'), to: '/projects' },
-          { icon: 'content_paste', title: this.$t('navigation.cv'), to: '/cv' },
-          { icon: 'build', title: this.$t('navigation.services'), to: '/services' },
-          { icon: 'person', title: this.$t('navigation.contact'), to: '/contact' }
+          { icon: 'home', title: 'blog', to: '/' },
+          { icon: 'work', title: 'portfolio', to: '/projects' },
+          { icon: 'content_paste', title: 'cv', to: '/cv' },
+          { icon: 'build', title: 'services', to: '/services' },
+          { icon: 'person', title: 'contact', to: '/contact' }
         ],
         miniVariant: false,
         languages: [
-          { title: 'Español', shortTitle: 'Es' },
-          { title: 'English', shortTitle: 'En' }
+          { title: 'Español', shortTitle: 'es' },
+          { title: 'English', shortTitle: 'en' }
         ],
-        selectedLang: 'Es',
+        selectedLang: 'es',
         title: 'apu314'
       }
+    },
+    computed: {
+
     },
     methods: {
       selectLang (lang) {

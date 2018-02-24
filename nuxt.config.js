@@ -1,5 +1,6 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
+const i18nExtensions = require('vue-i18n-extensions')
 
 module.exports = {
   /*
@@ -27,6 +28,9 @@ module.exports = {
     '~/plugins/vuetify.js',
     { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
   ],
+  /**
+   * Vue CSS
+   */
   css: [
     '~/assets/style/app.styl'
   ],
@@ -74,6 +78,18 @@ module.exports = {
             whitelist: [/^vuetify/]
           })
         ]
+      }
+    }
+  },
+  /**
+   * Render options
+   */
+  render: {
+    // confiture `render`
+    // see Nuxt.js docs: https://nuxtjs.org/api/configuration-render#bundleRenderer
+    bundleRenderer: {
+      directives: {
+        t: i18nExtensions.directive
       }
     }
   }
