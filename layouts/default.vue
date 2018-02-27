@@ -6,7 +6,23 @@
       v-model="drawer"
       fixed
       app
+      width="150"
+      hide-overlay
     >
+
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-btn
+                icon
+                @click.stop="drawer = !drawer"
+            >
+              <v-icon v-html="'close'"></v-icon>
+            </v-btn>
+          </v-list-tile-action>
+        </v-list-tile>
+      </v-list>
+
       <v-list>
         <v-list-tile>
           <v-list-tile-action>
@@ -84,14 +100,14 @@
         clipped: false,
         drawer: false, // Nav Drawer default: closed.
         fixed: false,
+        miniVariant: false,
         items: [
           { icon: 'home', title: 'blog', to: '/' },
-          { icon: 'work', title: 'portfolio', to: '/projects' },
-          { icon: 'content_paste', title: 'cv', to: '/cv' },
-          { icon: 'build', title: 'services', to: '/services' },
-          { icon: 'person', title: 'contact', to: '/contact' }
+          { icon: 'work', title: 'portfolio', to: '/portfolio' }
+          // { icon: 'content_paste', title: 'cv', to: '/cv' },
+          // { icon: 'build', title: 'services', to: '/services' },
+          // { icon: 'person', title: 'contact', to: '/contact' }
         ],
-        miniVariant: false,
         languages: [
           { title: 'Español', shortTitle: 'es' },
           { title: 'English', shortTitle: 'en' }
@@ -99,9 +115,6 @@
         selectedLang: 'es',
         title: 'apu314'
       }
-    },
-    computed: {
-
     },
     methods: {
       selectLang (lang) {

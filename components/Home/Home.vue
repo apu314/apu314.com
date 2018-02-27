@@ -2,13 +2,19 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <v-card>
-        <v-card-title class="headline">{{ headLine }}</v-card-title>
+        <v-card-title class="headline text-xs-center">{{ headLine }}</v-card-title>
         <v-card-text>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque delectus deleniti eaque error eum facilis fuga laboriosam maxime modi quasi quisquam sapiente sint soluta tempora, tempore, vel voluptas voluptate!</p>
+          <p>{{ content }}</p>
+
           <div class="text-xs-right">
             <em><small>&mdash; apu314</small></em>
           </div>
         </v-card-text>
+        <v-card-actions>
+          <v-btn color="success" href="https://github.com/apu314" target="_blank">Github</v-btn>
+          <v-btn color="info" href="https://codepen.io/apu314" target="_blank">Codepen</v-btn>
+          <v-btn color="error" :to="'/portfolio'">Portfolio</v-btn>
+        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
@@ -19,6 +25,9 @@
     computed: {
       headLine () {
         return this.$i18n.t('index.headline')
+      },
+      content () {
+        return this.$i18n.t('index.content')
       }
     }
   }
