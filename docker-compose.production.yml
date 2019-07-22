@@ -45,4 +45,4 @@ services:
 networks:
   web:
 #    external:
-#      name: nginx-web
+#      name: nginx_web
