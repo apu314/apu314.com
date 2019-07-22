@@ -46,6 +46,7 @@ First, we need to redo the changes done at step **1**.
 ***We do this because when executing*** *init-letsencrypt.sh* ***by the first time, we only need to execute nginx and 
 certbot containers with a network called web. And now we want to create a network inside web called nginx_web that 
 connects our proxy container with nuxtjs container.***
+
 Once done, we can proceed. 
 
 So we're executing docker-compose up from the docker-compose file inside nginx folder and 
