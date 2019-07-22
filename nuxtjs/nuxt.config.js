@@ -1,8 +1,11 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = (dir) => require('path').join(__dirname, dir)
 const i18nExtensions = require('vue-i18n-extensions')
+const pkg = require('./package')
 
 module.exports = {
+  mode: 'universal',
+
   /*
   ** Headers of the page
   */
@@ -10,11 +13,12 @@ module.exports = {
     htmlAttrs : {
       lang: 'es'
     },
-    title: 'apu314.com',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
-      { hid: 'description', name: 'description', content: 'Full-Stack Web Development' }
+      { bane: 'google', content: 'notranslate' },
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -38,6 +42,10 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  /*
+  ** Nuxt.js modules
+  */
+  modules: ['cookie-universal-nuxt'],
   /*
   ** Build configuration
   */

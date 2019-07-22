@@ -4,10 +4,6 @@
   "description": "Nuxt frontend for apu314.com",
   "author": "apu314",
   "private": true,
-  "nuxt": {
-    "host": "0.0.0.0",
-    "port": "3000"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -16,6 +12,7 @@
   },
   "dependencies": {
     "nuxt": "^2.8.1",
+    "cookie-universal-nuxt": "^2.0.14",
     "vue-i18n": "^8.12.0",
     "vuetify": "^1.5.16"
   },
