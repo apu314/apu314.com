@@ -28,7 +28,7 @@ services:
      - web
    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
-  nuxt:
+  nuxtjs:
     container_name: nuxtjs
     build:
       context: ./nuxtjs
