@@ -12,10 +12,7 @@ $ docker stop certbot nginx nuxtjs
 $ docker rm certbot nginx nuxtjs
 
 ## Get changes from git repo
-$ git pull https://github.com/apu314/apu314.com.git
-
-## 
-$ 
+$ git pull https://github.com/apu314/apu314.com.git 
 ```
 
 ## Build Setup
