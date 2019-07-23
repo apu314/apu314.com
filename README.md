@@ -6,10 +6,10 @@
 $ docker ps
 
 ## Stop all 3 containers (can be done one by one)
-$ docker stop certbot nginx nuxtjs
+$ docker stop certbot proxy nuxtjs
 
 ## Remove all 3 containers (can be done one by one)
-$ docker rm certbot nginx nuxtjs
+$ docker rm certbot proxy nuxtjs
 
 ## Get changes from git repo
 $ git pull https://github.com/apu314/apu314.com.git 
