@@ -21,6 +21,8 @@ services:
     container_name: certbot
     image: certbot/certbot
     restart: always
+    depends_on:
+      - proxy
     volumes:
       - ./production/certbot/conf:/etc/letsencrypt
       - ./production/certbot/www:/var/www/certbot
