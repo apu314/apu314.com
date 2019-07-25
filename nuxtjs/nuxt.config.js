@@ -1,7 +1,9 @@
-const nodeExternals = require('webpack-node-externals')
-const resolve = (dir) => require('path').join(__dirname, dir)
-const i18nExtensions = require('vue-i18n-extensions')
 const pkg = require('./package')
+
+const nodeExternals = require('webpack-node-externals')
+const i18nExtensions = require('vue-i18n-extensions')
+
+import colors from 'vuetify/es5/util/colors'
 
 module.exports = {
   mode: 'universal',
@@ -29,7 +31,6 @@ module.exports = {
   ** Vue Plugins
   */
   plugins: [
-    '~/plugins/vuetify.js',
     { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
   ],
   /**
@@ -45,49 +46,62 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: ['cookie-universal-nuxt'],
+  modules: [
+    '@nuxtjs/vuetify',
+    'cookie-universal-nuxt',
+    '@nuxtjs/eslint-module'
+  ],
+  /* '@nuxtjs/vuetify',
+     '@nuxtjs/eslint-module'
+  ** vuetify module configuration
+  ** https://github.com/nuxt-community/vuetify-module
+  */
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        },
+        dark: {
+          primary: colors.blue.darken4
+        }
+      }
+    }
+  },
   /*
   ** Build configuration
   */
   build: {
-    babel: {
-      plugins: [
-        ["transform-imports", {
-          "vuetify": {
-            "transform": "vuetify/es5/components/${member}",
-            "preventFullImport": true
-          }
-        }]
-      ]
-    },
+    // babel: {
+    //   plugins: [
+    //     ["transform-imports", {
+    //       "vuetify": {
+    //         "transform": "vuetify/es5/components/${member}",
+    //         "preventFullImport": true
+    //       }
+    //     }]
+    //   ]
+    // },
     /*
     ** Vendor files
     */
-    vendor: [
-      '~/plugins/vuetify.js',
-      'vue-i18n'
-    ],
+    // vendor: [
+    //   '~/plugins/vuetify.js',
+    //   'vue-i18n'
+    // ],
     extractCSS: true,
+    transpile: [/^vuetify/],
     /*
-    ** Run ESLint on save
+    ** You can extend webpack config here
     */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
-      }
-    }
+    extend(config, ctx) {
+    },
   },
   /**
    * Render options
@@ -100,5 +114,9 @@ module.exports = {
         t: i18nExtensions.directive
       }
     }
+  },
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
   }
 }

@@ -34,16 +34,13 @@
   </v-app>
 </template>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
   .clase {
-    // margin: 25px;
-    // background-color: rgba(255, 45, 89, .4);
     background: linear-gradient(0deg, rgba(242, 255, 174, 0.36),rgba(242, 255, 174, 0.36)), url(/img/bg-landing-palmera.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    // background-color: rgba(211, 211, 211, .8);
     filter: opacity(90%);
   }
 
