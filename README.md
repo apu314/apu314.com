@@ -33,10 +33,16 @@ This will create our dummy certificates for nginx to be able to be executed late
 $ chmod 0755 init-letsencrypt.sh and 
 $ ./init-letsencrypt.sh production email domain www.domain
 ```
-**3)** We're going to deploy our application. 
+**3)** Stop de services created by our last execution.
+``` bash
+## Stop the services specifying a docker-compose file and not removing volumes 
+$ sudo docker-compose -f docker-compose.production.yml down
+```
+
+**4)** We're going to deploy our application. 
 
 (***It's possible that we need to stop the proxy and certbot container 
-first***) 
+first***)
 
 First, we need to redo the changes done at step **1**.
 
@@ -50,7 +56,7 @@ So we're executing docker-compose up from the docker-compose file inside nginx f
 then from the root.
 ``` bash
 ## Run proxy (Nginx) and certbot containers firstly.
-$ cd nginx
+$ cd nginx/
 $ sudo docker-compose -f docker-compose.production.yml up --build -d
 $ cd ..
 $ sudo docker-compose -f docker-compose.production.yml up --build -d
