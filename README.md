@@ -26,9 +26,6 @@ $ sudo docker-compose -f docker-compose.production.yml down
 
 **4)** We're going to deploy our application. 
 
-(***It's possible that we need to stop the proxy and certbot container 
-first***)
-
 First, we need to redo the changes done at step **1**.
 
 ***We do this because when executing*** *init-letsencrypt.sh* ***by the first time, we only need to execute nginx and 
