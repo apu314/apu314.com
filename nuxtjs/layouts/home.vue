@@ -1,38 +1,42 @@
 <template>
-  <v-app id="inspire">
-    <v-container fluid flat fill-height>
-      <v-layout row wrap align-start class="clase" img="/img/bg-landing.jpg">
-        <!-- Botones Memú izquierda, idioma derecha -->
-        <v-toolbar xs12 color="transparent" flat>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-spacer></v-spacer>
-          <v-menu :nudge-width="100" left>
-            <v-toolbar-title slot="activator">
-              <span> {{ this.$i18n.locale.name }}</span>
-              <v-icon light>arrow_drop_down</v-icon>
-            </v-toolbar-title>
-            <v-list>
-              <v-list-item v-for="locale in availableLocales"
-                           :key="locale.code"
-                           @click="switchLocalePath(locale.code)">
-                <v-list-item-title v-text="locale.name"></v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-toolbar>
-        <!-- Contenido -->
-        <v-flex d-flex xs12 text-xs-center align-center>
-          <v-card row wrap align-center color="transparent" flat>
-            <v-flex xs12>
-              <h1>APU314</h1>
-            </v-flex>
-            <v-flex xs12>
-              <h2># Full Stack Developer</h2>
-            </v-flex>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+  <v-app>
+    <v-content>
+
+      <v-container fluid flat fill-height px-2 py-2>
+        <v-layout class="clase" img="/img/bg-landing.jpg">
+          <!-- Botones Memú izquierda, idioma derecha -->
+<!--          <v-toolbar xs12 color="transparent" flat>-->
+<!--            <v-toolbar-side-icon></v-toolbar-side-icon>-->
+<!--            <v-spacer></v-spacer>-->
+<!--            <v-menu :nudge-width="100" left>-->
+<!--              <v-toolbar-title slot="activator">-->
+<!--                <span> {{ this.$i18n.locale.name }}</span>-->
+<!--                <v-icon light>arrow_drop_down</v-icon>-->
+<!--              </v-toolbar-title>-->
+<!--              <v-list>-->
+<!--                <v-list-item v-for="locale in availableLocales"-->
+<!--                             :key="locale.code"-->
+<!--                             @click="switchLocalePath(locale.code)">-->
+<!--                  <v-list-item-title v-text="locale.name"></v-list-item-title>-->
+<!--                </v-list-item>-->
+<!--              </v-list>-->
+<!--            </v-menu>-->
+<!--          </v-toolbar>-->
+          <!-- Contenido -->
+          <v-flex d-flex xs12 justify-center align-center>
+            <v-card color="transparent" flat>
+              <v-flex xs12>
+                <h1 class="text-center">APU314</h1>
+              </v-flex>
+              <v-flex xs12>
+                <h2 class="text-center"># Full Stack Developer</h2>
+              </v-flex>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+
+    </v-content>
   </v-app>
 </template>
 
