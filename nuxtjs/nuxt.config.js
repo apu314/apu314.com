@@ -1,8 +1,9 @@
 const pkg = require('./package')
 
-const nodeExternals = require('webpack-node-externals')
-const i18nExtensions = require('vue-i18n-extensions')
+// const nodeExternals = require('webpack-node-externals')
+// const i18nExtensions = require('vue-i18n-extensions')
 
+// For Vuetify.
 import colors from 'vuetify/es5/util/colors'
 
 module.exports = {
@@ -31,13 +32,14 @@ module.exports = {
   ** Vue Plugins
   */
   plugins: [
-    { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
+    // { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
+    // { src: '~/plugins/vuetify.js', mode: 'server'}
   ],
   /**
    * Vue CSS
    */
   css: [
-    '~/assets/style/app.styl'
+    // '~/assets/style/app.styl'
   ],
   /*
   ** Customize the progress bar color
@@ -47,9 +49,33 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/vuetify',
-    'cookie-universal-nuxt',
-    '@nuxtjs/eslint-module'
+    ['cookie-universal-nuxt', { alias: 'cookies' }],
+    'nuxt-i18n'
+  ],
+  i18n: {
+    seo: true,
+    vueI18nLoader: true,
+    baseUrl: 'apu314.com',
+    defaultLocale: 'es',
+    lazy: true,
+    langDir: 'lang/',
+    locales: [
+      {
+        code: 'es',
+        iso: 'es-ES',
+        name: 'Español',
+        file: 'es-ES.js'
+      },
+      {
+        code: 'en',
+        iso: 'en-EN',
+        name: 'English',
+        file: 'en-EN.js'
+      }
+    ]
+  },
+  devModules: [
+    '@nuxtjs/vuetify'
   ],
   /* '@nuxtjs/vuetify',
      '@nuxtjs/eslint-module'
@@ -57,6 +83,7 @@ module.exports = {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
+    treeShake: true,
     theme: {
       themes: {
         light: {
@@ -78,29 +105,17 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // babel: {
-    //   plugins: [
-    //     ["transform-imports", {
-    //       "vuetify": {
-    //         "transform": "vuetify/es5/components/${member}",
-    //         "preventFullImport": true
-    //       }
-    //     }]
-    //   ]
-    // },
-    /*
-    ** Vendor files
-    */
-    // vendor: [
-    //   '~/plugins/vuetify.js',
-    //   'vue-i18n'
-    // ],
     extractCSS: true,
-    transpile: [/^vuetify/],
+    // transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      config.module.rules.push({
+        resourceQuery: /blockType=i18n/,
+        type: "javascript/auto",
+        loader: ["@kazupon/vue-i18n-loader", "yaml-loader"],
+      });
     },
   },
   /**
@@ -109,11 +124,11 @@ module.exports = {
   render: {
     // confiture `render`
     // see Nuxt.js docs: https://nuxtjs.org/api/configuration-render#bundleRenderer
-    bundleRenderer: {
-      directives: {
-        t: i18nExtensions.directive
-      }
-    }
+    // bundleRenderer: {
+    //   directives: {
+    //     t: i18nExtensions.directive
+    //   }
+    // }
   },
   server: {
     port: 3000,

@@ -8,13 +8,15 @@
           <v-spacer></v-spacer>
           <v-menu :nudge-width="100" left>
             <v-toolbar-title slot="activator">
-              <span> {{ selectedLang }}</span>
+              <span> {{ this.$i18n.locale.name }}</span>
               <v-icon light>arrow_drop_down</v-icon>
             </v-toolbar-title>
             <v-list>
-              <v-list-tile v-for="lang in languages" :key="lang.shortTitle" @click="selectLang(lang.shortTitle)">
-                <v-list-tile-title v-text="lang.title"></v-list-tile-title>
-              </v-list-tile>
+              <v-list-item v-for="locale in availableLocales"
+                           :key="locale.code"
+                           @click="switchLocalePath(locale.code)">
+                <v-list-item-title v-text="locale.name"></v-list-item-title>
+              </v-list-item>
             </v-list>
           </v-menu>
         </v-toolbar>
@@ -34,7 +36,7 @@
   </v-app>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
   .clase {
     background: linear-gradient(0deg, rgba(242, 255, 174, 0.36),rgba(242, 255, 174, 0.36)), url(/img/bg-landing-palmera.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -70,14 +72,9 @@
         title: 'apu314'
       }
     },
-    methods: {
-      selectLang (lang) {
-        if (lang === this.$i18n.locale) {
-          return lang
-        }
-        this.selectedLang = lang
-        this.$i18n.locale = lang
-        localStorage.setItem('locale', lang)
+    computed: {
+      availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
       }
     }
   }

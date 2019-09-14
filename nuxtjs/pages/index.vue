@@ -3,6 +3,7 @@
 </template>
 
 <script>
+  import LangSwitcher from '../components/LangSwitcher'
   import Home from '~/components/Home/Home.vue'
 
   export default {
@@ -24,6 +25,7 @@
       }
     },
     components: {
+      LangSwitcher,
       Home
     },
     layout: 'home'

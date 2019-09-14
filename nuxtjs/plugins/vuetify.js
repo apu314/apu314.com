@@ -28,9 +28,4 @@ Vue.use(Vuetify, {
     VDivider,
     VMenu
   }
-  // options: {
-  //   minifyTheme (css) {
-  //     return css.replace(/[\s|\r\n|\r|\n]/g, '')
-  //   }
-  // }
 })
