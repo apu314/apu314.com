@@ -58,7 +58,7 @@ module.exports = {
     baseUrl: 'apu314.com',
     defaultLocale: 'es',
     lazy: true,
-    langDir: 'lang/',
+    langDir: 'i18n/',
     locales: [
       {
         code: 'es',

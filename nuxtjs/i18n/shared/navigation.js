@@ -1,6 +1,8 @@
 export default {
   en: {
     navigation: {
+      home: 'Home',
+      admin: 'Admin',
       blog: 'Blog',
       portfolio: 'Portfolio',
       cv: 'CV',
@@ -10,6 +12,8 @@ export default {
   },
   es: {
     navigation: {
+      home: 'Home',
+      admin: 'Admin',
       blog: 'Blog',
       portfolio: 'Portfolio',
       cv: 'CV',
