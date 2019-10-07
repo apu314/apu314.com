@@ -1,4 +1,5 @@
 const pkg = require('./package')
+import { I18N } from './config'
 
 // const nodeExternals = require('webpack-node-externals')
 // const i18nExtensions = require('vue-i18n-extensions')
@@ -32,7 +33,7 @@ module.exports = {
   ** Vue Plugins
   */
   plugins: [
-    // { src: '~/plugins/vue-i18n.js', injectAs: 'i18n' }
+    // { src: '~/plugins/i18n.js' }
     // { src: '~/plugins/vuetify.js', mode: 'server'}
   ],
   /**
@@ -50,12 +51,28 @@ module.exports = {
   */
   modules: [
     ['cookie-universal-nuxt', { alias: 'cookies' }],
-    'nuxt-i18n'
+    ['nuxt-i18n', I18N]
   ],
-  i18n: {
+  // Old nuxt-i18n config.
+  /*i18n: {
     seo: true,
     vueI18nLoader: true,
     baseUrl: 'apu314.com',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      fallbackLocale: 'es'
+    },
+    onLanguageSwitched: (previous, current) => {
+      if (process.client) {
+        cookie.serialize('i18n_redirected', current, {
+          expires: new Date(new Date() + 365),
+          path: '/'
+        })
+      }
+    },
     defaultLocale: 'es',
     lazy: true,
     langDir: 'i18n/',
@@ -72,8 +89,8 @@ module.exports = {
         name: 'English',
         file: 'en-EN.js'
       }
-    ]
-  },
+    ],
+  },*/
   devModules: [
     '@nuxtjs/vuetify'
   ],

@@ -5,13 +5,6 @@ export default {
   //-------
   title: 'apu314.com',
 
-  //------
-  // INDEX
-  //------
-  subtitle: 'Desarrollador Web Full Stack Javascript PHP',
-  headline: 'Página en mantenimiento',
-  content: 'Para ver algunos de mis proyectos (incluyendo este), por favor visita los siguientes enlaces.',
-
   //-----------
   // NAVIGATION
   //-----------
@@ -23,6 +16,20 @@ export default {
     cv: 'CV',
     services: 'Servicios',
     contact: 'Contacto'
+  },
+
+  //------
+  // INDEX
+  //------
+  subtitle: 'Desarrollador Web Full Stack Javascript PHP',
+  headline: 'Página en mantenimiento',
+  content: 'Para ver algunos de mis proyectos (incluyendo este), por favor visita los siguientes enlaces.',
+
+  //------
+  // Admin
+  //------
+  admin: {
+    title: 'Panel de administración'
   },
 
   //-------

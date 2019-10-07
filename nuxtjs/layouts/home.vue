@@ -27,6 +27,7 @@
             <v-card color="transparent" flat>
               <v-flex xs12>
                 <h1 class="text-center">APU314</h1>
+                <h3 class="text-center" v-text="$t('admin.title')"></h3>
               </v-flex>
               <v-flex xs12>
                 <h2 class="text-center"># Full Stack Developer</h2>
@@ -78,7 +79,7 @@
     },
     computed: {
       availableLocales () {
-        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        return this.$i18n.locales.filter(i => i.code)
       }
     }
   }

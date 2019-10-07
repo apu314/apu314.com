@@ -28,7 +28,13 @@
       LangSwitcher,
       Home
     },
-    layout: 'home'
+    layout: 'home',
+    /*nuxtI18n: {
+      paths: {
+        es: '/index',
+        en: '/en'
+      }
+    }*/
   }
 </script>
 

@@ -18,23 +18,20 @@
 
       <v-divider></v-divider>
 
-      <v-list
-          dense
-          nav
-      >
+      <v-list dense nav>
         <v-list-item
             v-for="item in items"
             :key="item.title"
-            :to="item.to"
+            :to="item.route"
             link
-            nuxt
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
+            nuxt>
           <v-list-item-content>
-            <v-list-item-title v-text="$t('navigation.' + item.title)"></v-list-item-title>
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>
+              <nuxt-link :to="localePath(item.route)" v-text="$t('navigation.' + item.title)"></nuxt-link>
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -48,7 +45,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title>Admin dashboard</v-toolbar-title>
+      <v-toolbar-title v-text="$t('admin.title')"></v-toolbar-title>
       <div class="flex-grow-1"></div>
       <v-menu
           left
@@ -62,11 +59,11 @@
 
         <v-list>
           <v-list-item
-              v-for="lang in 2"
-              :key="lang"
-              @click="() => {}"
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              :to="switchLocalePath(locale.code)"
           >
-            <v-list-item-title>Lang {{ lang }}</v-list-item-title>
+            <v-list-item-title>{{ locale.name }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -181,24 +178,25 @@
         fixed: false,
         miniVariant: false,
         items: [
-          { icon: 'home', title: 'home', to: '/' },
-          { icon: 'home', title: 'admin', to: '/admin' },
-          { icon: 'work', title: 'portfolio', to: '/portfolio' }
+          { icon: 'home', title: 'home', route: 'index' },
+          { icon: 'home', title: 'admin', route: 'admin' },
+          { icon: 'work', title: 'portfolio', route: 'portfolio' }
           // { icon: 'content_paste', title: 'cv', to: '/cv' },
           // { icon: 'build', title: 'services', to: '/services' },
           // { icon: 'person', title: 'contact', to: '/contact' }
         ],
-        languages: [
+        /*languages: [
           { title: 'Español', shortTitle: 'es' },
           { title: 'English', shortTitle: 'en' }
-        ],
+        ],*/
         selectedLang: this.$i18n.locale,
-        title: 'Admin dashboard- apu314'
+        title: 'Admin dashboard - apu314'
       }
     },
     computed: {
       availableLocales () {
-        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        return this.$i18n.locales.filter(i => i.code)
+        // return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
       }
     }
   }

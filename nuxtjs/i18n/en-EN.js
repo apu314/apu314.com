@@ -5,6 +5,19 @@ export default {
   //-------
   title: 'apu314.com',
 
+  //-----------
+  // NAVIGATION
+  //-----------
+  navigation: {
+    home: 'Home',
+    admin: 'Admin',
+    blog: 'Blog',
+    portfolio: 'Portfolio',
+    cv: 'CV',
+    services: 'Services',
+    contact: 'Contact',
+  },
+
   //------
   // INDEX
   //------
@@ -12,21 +25,19 @@ export default {
   headline: 'Page under maintenance process',
   content: 'If you want to see some of my projects (including this one), please visit the following links.',
 
-  //-----------
-  // NAVIGATION
-  //-----------
-  home: 'Home',
-  admin: 'Admin',
-  blog: 'Blog',
-  portfolio: 'Portfolio',
-  cv: 'CV',
-  services: 'Services',
-  contact: 'Contact',
+  //------
+  // Admin
+  //------
+  admin: {
+    title: 'Admin Dashboard'
+  },
 
   //-------
   // ERRORS
   //-------
-  errorTitle: 'Oops',
-  errorSubtitle: 'Something happened while loading',
-  error: 'An error ocurred when the page was loading'
+  error: {
+    errorTitle: 'Oops',
+    errorSubtitle: 'Something happened while loading',
+    error: 'An error occurred when the page was loading'
+  }
 }
