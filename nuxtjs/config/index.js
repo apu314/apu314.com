@@ -1,25 +1,30 @@
-import es from '../i18n/es-ES'
-import en from '../i18n/en-EN'
+import es from '../i18n/es-ES.js'
+import en from '../i18n/en-EN.js'
 
-export const I18N= {
+export const API_ROOT = 'https://apu314.com/api/'
+
+export const I18N = {
   locales: [
     {
       code: 'es',
       iso: 'es-ES',
-      name: 'Español'
+      name: 'Español',
+      file: 'es-ES.js'
     },
     {
       code: 'en',
       iso: 'en-EN',
-      name: 'English'
+      name: 'English',
+      file: 'en-EN.js'
     }
   ],
   defaultLocale: 'es',
   lazy: true,
   seo: true,
   vueI18nLoader: true,
-  baseUrl: 'apu314.com',
-  strategy: 'prefix_except_default',
+  langDir: 'i18n/',
+  /*baseUrl: 'apu314.com',*/
+  /*strategy: 'prefix_except_default',*/
   detectBrowserLanguage: {
     useCookie: true,
     cookieKey: 'i18n_redirected',
@@ -35,21 +40,17 @@ export const I18N= {
     }
   },
   routes: {
-    index: {
-      es: '/index',
-      en: '/en/index'
+    services: {
+      es: '/servicios',
+      en: 'services'
     },
-    admin: {
-      es: '/admin',
-      en: '/en/admin'
-    },
-    portfolio: {
-      es: '/portfolio',
-      en: '/en/portfolio'
-    },
-  },
+    contact: {
+      es: '/contacto',
+      en: '/contact'
+    }
+  }/*,
   vueI18n: {
     fallbackLocale: 'es',
     messages: { es, en }
-  }
+  }*/
 }

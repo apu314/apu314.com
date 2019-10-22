@@ -21,9 +21,11 @@ export default {
   //------
   // INDEX
   //------
-  subtitle: 'Full Stack Javascript PHP Web Developer',
-  headline: 'Page under maintenance process',
-  content: 'If you want to see some of my projects (including this one), please visit the following links.',
+  index: {
+    subtitle: 'Full Stack Javascript PHP Web Developer',
+    headline: 'Page under maintenance process',
+    content: 'If you want to see some of my projects (including this one), please visit the following links.',
+  },
 
   //------
   // Admin

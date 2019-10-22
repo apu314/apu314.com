@@ -19,7 +19,8 @@
   "dependencies": {
     "cookie-universal-nuxt": "^2.0.14",
     "nuxt": "^2.9.0",
-    "nuxt-i18n": "^6.0.0"
+    "nuxt-i18n": "^6.0.0",
+    "vue-meta": "^2.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

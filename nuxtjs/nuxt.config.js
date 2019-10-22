@@ -1,5 +1,5 @@
 const pkg = require('./package')
-import { I18N } from './config'
+import { API_ROOT, I18N } from './config'
 
 // const nodeExternals = require('webpack-node-externals')
 // const i18nExtensions = require('vue-i18n-extensions')
@@ -21,7 +21,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
-      { bane: 'google', content: 'notranslate' },
+      { name: 'google', content: 'notranslate' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -91,7 +91,7 @@ module.exports = {
       }
     ],
   },*/
-  devModules: [
+  buildModules: [
     '@nuxtjs/vuetify'
   ],
   /* '@nuxtjs/vuetify',
@@ -132,7 +132,7 @@ module.exports = {
         resourceQuery: /blockType=i18n/,
         type: "javascript/auto",
         loader: ["@kazupon/vue-i18n-loader", "yaml-loader"],
-      });
+      })
     },
   },
   /**

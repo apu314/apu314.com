@@ -20,20 +20,33 @@
 
       <v-list dense nav>
         <v-list-item
-            v-for="item in items"
-            :key="item.title"
-            :to="item.route"
+            :to="localePath('index')"
             link
             nuxt>
           <v-list-item-content>
             <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon>home</v-icon>
             </v-list-item-icon>
             <v-list-item-title>
-              <nuxt-link :to="localePath(item.route)" v-text="$t('navigation.' + item.title)"></nuxt-link>
+              <nuxt-link :to="localePath('index')">{{ $t('navigation.home') }}</nuxt-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item
+            :to="localePath('admin')"
+            link
+            nuxt>
+          <v-list-item-content>
+            <v-list-item-icon>
+              <v-icon>road</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>
+              <nuxt-link :to="localePath('admin')">{{ $t('navigation.admin') }}</nuxt-link>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
       </v-list>
     </v-navigation-drawer>
 
@@ -45,7 +58,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title v-text="$t('admin.title')"></v-toolbar-title>
+      <v-toolbar-title>{{ $t('admin.title') }}</v-toolbar-title>
       <div class="flex-grow-1"></div>
       <v-menu
           left

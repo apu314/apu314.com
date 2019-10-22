@@ -1,9 +1,13 @@
 <template>
-
+    <v-row>
+        <v-col>
+            <h1>Admin Panel</h1>
+        </v-col>
+    </v-row>
 </template>
 
 <script>
-  import LangSwitcher from '../components/LangSwitcher'
+  import LangSwitcher from '../../components/LangSwitcher'
 
   export default {
     name: 'admin',

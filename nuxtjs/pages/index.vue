@@ -7,11 +7,6 @@
   import Home from '~/components/Home/Home.vue'
 
   export default {
-    data () {
-      return {
-        title: this.$t('index.title')
-      }
-    },
     head () {
       return {
         title: this.$t('index.title'),
@@ -22,6 +17,11 @@
           { hid: 'description', name: 'description', content: this.$t('index.subtitle') },
           { property: 'og:url', content: 'https://apu314.com/' }
         ]
+      }
+    },
+    data () {
+      return {
+        title: this.$t('index.title')
       }
     },
     components: {

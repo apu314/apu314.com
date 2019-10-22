@@ -10,7 +10,7 @@ export default {
   //-----------
   navigation: {
     home: 'Home',
-    admin: 'Admin',
+    admin: 'Administración',
     blog: 'Blog',
     portfolio: 'Portfolio',
     cv: 'CV',
@@ -21,9 +21,11 @@ export default {
   //------
   // INDEX
   //------
-  subtitle: 'Desarrollador Web Full Stack Javascript PHP',
-  headline: 'Página en mantenimiento',
-  content: 'Para ver algunos de mis proyectos (incluyendo este), por favor visita los siguientes enlaces.',
+  index: {
+    subtitle: 'Desarrollador Web Full Stack Javascript PHP',
+    headline: 'Página en mantenimiento',
+    content: 'Para ver algunos de mis proyectos (incluyendo este), por favor visita los siguientes enlaces.',
+  },
 
   //------
   // Admin

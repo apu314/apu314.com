@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
       <v-card>
-        <v-card-title class="headline text-xs-center">{{ headLine }}</v-card-title>
+        <v-card-title class="headline text-xs-center">{{ $t('index.headline') }}</v-card-title>
         <v-card-text>
           <p>{{ content }}</p>
 
