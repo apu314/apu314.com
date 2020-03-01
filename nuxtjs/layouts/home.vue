@@ -97,6 +97,10 @@
   body {
     margin: 0;
     height: 100vh;
+
+    background: #E8F1FA;
+    color: #8C97B4;
+
     font-family: 'Nunito', sans-serif;
   }
 
@@ -120,11 +124,15 @@
       grid-area: header;
 
       height: 50px;
+      margin: 10px;
       padding: 0 1rem;
 
       position: sticky;
       background-color: #ffffff;
-      box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
+      // box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
+
+      box-shadow: 8px 8px 20px 0 rgba(108,141,194,0.28), -8px -8px 22px 0 rgba(255,255,255,0.82);
+      border-radius: 10px;
 
       display: flex;
       justify-content: space-between;
