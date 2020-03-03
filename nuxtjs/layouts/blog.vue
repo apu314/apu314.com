@@ -3,7 +3,7 @@
     <div class="continer">
       <header>
         <div class="logo">
-          <h1>APU314</h1>
+          <h1>Blog</h1>
         </div>
         <nav>
           <ul>
@@ -58,6 +58,37 @@
       </v-container>
 
     </v-content>-->
+
+<!--
+
+    <div class="cont">
+      <div class="quote">
+        <p>Post 1</p>
+        <span>apu314</span>
+      </div>
+      <div class="quote span-2">
+        <p>Post 2</p>
+        <span>apu314</span>
+      </div>
+      <div class="quote">
+        <p>Post 3</p>
+        <span>apu314</span>
+      </div>
+      <div class="quote">
+        <p>Post 4</p>
+        <span>apu314</span>
+      </div>
+    </div>
+
+    <div class="gridi-container">
+      <main>main</main>
+      <section class="nom">nom</section>
+      <section class="yum">yum</section>
+      <section class="diabeetus">diabeetus</section>
+      <header>header</header>
+      <div class="candy">candy</div>
+    </div>
+-->
 
   </v-app>
 </template>
@@ -172,13 +203,115 @@
   }
 
 
+  .cont {
+    padding: 3em;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
+    .quote {
+      padding: 2em;
+      border-radius: .3em;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
+
+      p {
+        margin-top: 0;
+      }
+
+      span {
+        font-weight: bold;
+        position: relative;
+        margin-left: 15px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 10px;
+          border-bottom: 1px solid black;
+          top: 10px;
+          left: -15px;
+        }
+      }
+    }
+  }
 
   @media (min-width: 550px) {
     /*.span-2 {
       grid-column: auto / span 2;
     }*/
   }
+
+  .gridi-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 1fr 4fr 3fr 2fr;
+
+    // Algo más entendible
+    grid-template-areas:
+        'main      main      header'
+        'main      main      candy'
+        'nom       yum       candy'
+        'diabeetus diabeetus candy';
+
+    height: 100vh;
+    margin: 2em;
+
+    main {
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      grid-row-start: 1;
+      grid-row-end: 3;
+
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+
+
+      grid-area: 1 / 1 / 3 / 3; // Shorthand para todo lo anterior.
+
+      grid-area: main;
+
+      background: #FFFADF;
+    }
+
+    .nom {
+      grid-area: 3 / 1 / 4 / 3;
+      grid-area: nom;
+      background: #c4b35a;
+      color: white;
+    }
+
+    .yum {
+      grid-area: 3 / 2 / 4 / 3;
+      grid-area: yum;
+      background: #202020;
+      color: white;
+    }
+
+    .diabeetus {
+      grid-area: 4 / 1 / 5 / 3;
+      grid-area: diabeetus;
+      background: #202020;
+      color: white;
+    }
+
+    header {
+      grid-area: 1 / 3 / 2 / 4;
+      grid-area: header;
+      background: purple;
+    }
+
+    .candy {
+      grid-area: 2 / 3 / 5 / 4;
+      grid-area: candy;
+      background: purple;
+      background: linear-gradient(0deg, rgba(7,4,51,1) 0%, rgba(9,9,121,1) 35%, rgba(0,131,255,1) 100%);
+    }
+
+  }
+
 
   .clase {
     background: linear-gradient(0deg, rgba(242, 255, 174, 0.36), rgba(242, 255, 174, 0.36)), url('/img/bg-landing-palmera.jpg') no-repeat center center fixed;
