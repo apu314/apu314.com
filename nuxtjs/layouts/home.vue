@@ -93,16 +93,18 @@
   </v-app>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
   body {
     margin: 0;
     height: 100vh;
 
     background: #E8F1FA;
+    font-size: 16px;
     color: #8C97B4;
 
     font-family: 'Nunito', sans-serif;
   }
+  .v-application { background: transparent !important; }
 
   .continer {
     display: grid;
@@ -120,11 +122,14 @@
         minmax(calc(100vh - 50px), 1fr) 1fr
         [footer] 200px;
 
+
+    margin: 10px;
+
     header {
       grid-area: header;
 
       height: 50px;
-      margin: 10px;
+      //margin: 10px;
       padding: 0 1rem;
 
       position: sticky;
@@ -172,14 +177,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background-color: #ffffff;
+      box-shadow: 8px 8px 20px 0 rgba(108,141,194,0.28), -8px -8px 22px 0 rgba(255,255,255,0.82);
+      border-radius: 10px;
     }
 
     aside {
       grid-area: aside;
+
+      background-color: #ffffff;
+      box-shadow: 8px 8px 20px 0 rgba(108,141,194,0.28), -8px -8px 22px 0 rgba(255,255,255,0.82);
+      border-radius: 10px;
     }
 
     footer {
       grid-area: footer;
+
+      background-color: #ffffff;
+      box-shadow: 8px 8px 20px 0 rgba(108,141,194,0.28), -8px -8px 22px 0 rgba(255,255,255,0.82);
+      border-radius: 10px;
     }
   }
 
