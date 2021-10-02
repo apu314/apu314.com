@@ -1,4 +1,4 @@
-# apu314.com Dockerized (Nginx, Certbot, nuxtjs)
+# API & Front(SSR) Dockerized (Nginx, Certbot, nuxtjs)
 
 ## Build Setup
 **1)** First of all you will need to uncomment the proxy and certbot services from the root 
